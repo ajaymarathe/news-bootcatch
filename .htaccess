@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /news-bootcatch/
+
+RewriteCond %{THE_REQUEST} /news/([^\s?]*) [NC]
+RewriteRule ^ %1 [L,NE,R=302]
+
+RewriteRule ^((?!public/).*)$ news/$1 [L,NC]
